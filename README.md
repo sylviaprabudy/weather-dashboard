@@ -40,9 +40,9 @@ A simple web application that allows users to search for a city to get the curre
 ![](assets/images/06-server-side-apis-homework-demo.png)
 
 ## Technologies Use
-<p><a href="https://openweathermap.org/" target="_blank">OpenWeather API</a></p>
-<p><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></p>
-<p><a href="https://momentjs.com/" target="_blank">Moment.js</a></p>
+<p><a href="https://openweathermap.org/">OpenWeather API</a></p>
+<p><a href="https://getbootstrap.com/">Bootstrap</a></p>
+<p><a href="https://momentjs.com/">Moment.js</a></p>
 
 
 ## Contributor:

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header class="container-fluid text-center text-white bg-dark p-2">
         <h1>Weather Dashboard</h1>
-      </header>
+    </header>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-light">
                 <h5 class="mt-1">Search for a City:</h5>
                 <div class="input-group mb-3">
-                    <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
+                    <input id="enter-city" type="text" class="form-control" placeholder="Enter a city" aria-label="Enter a city">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button" id="search-button">
                             <i class="fas fa-search"></i>
@@ -31,31 +33,13 @@
             <div class="col-lg-9">
                 <div class="row mr-0">
                     <div class="col-lg-11 card m-3 d-none" id="today-weather">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3 id="city-name" class="city-name align-middle"></h3>
-                                <img id="current-pic" alt="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="temperature"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="humidity"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="wind-speed"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 d-flex">
-                                <p id="UV-index"></p>
-                            </div>
+                        <div class="card-body">
+                            <h3 id="city-name" class="city-name align-middle"></h3>
+                            <img id="current-pic" alt="">
+                            <p id="temperature"></p>
+                            <p id="humidity"></p>
+                            <p id="wind-speed"></p>
+                            <p id="UV-index"></p>
                         </div>
                     </div>
                 </div>
@@ -78,4 +62,5 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

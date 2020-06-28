@@ -1,5 +1,5 @@
 function initPage() {
-    const inputEl = document.getElementById("city-input");
+    const cityEl = document.getElementById("enter-city");
     const searchEl = document.getElementById("search-button");
     const clearEl = document.getElementById("clear-history");
     const nameEl = document.getElementById("city-name");
@@ -12,23 +12,20 @@ function initPage() {
     var fivedayEl = document.getElementById("fiveday-header");
     var todayweatherEl = document.getElementById("today-weather");
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-    console.log(searchHistory);
 
     // Assigning a unique API to a variable
     const APIKey = "84b79da5e5d7c92085660485702f4ce8";
-    //  When search button is clicked, read the city name typed by the user
 
     function getWeather(cityName) {
-        //  Using saved city name, execute a current condition get request from open weather map api
+        // Execute a current weather get request from open weather api
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
             .then(function (response) {
-                console.log(response);
+
                 todayweatherEl.classList.remove("d-none");
-                
-                //  Parse response to display current weather
+
+                // Parse response to display current weather
                 const currentDate = new Date(response.data.dt * 1000);
-                console.log(currentDate);
                 const day = currentDate.getDate();
                 const month = currentDate.getMonth() + 1;
                 const year = currentDate.getFullYear();
@@ -58,10 +55,9 @@ function initPage() {
                 let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
                 axios.get(forecastQueryURL)
                     .then(function (response) {
-
                         fivedayEl.classList.remove("d-none");
+                        
                         //  Parse response to display forecast for next 5 days
-                        console.log(response);
                         const forecastEls = document.querySelectorAll(".forecast");
                         for (i = 0; i < forecastEls.length; i++) {
                             forecastEls[i].innerHTML = "";
@@ -93,7 +89,7 @@ function initPage() {
 
     // Get history from local storage if any
     searchEl.addEventListener("click", function () {
-        const searchTerm = inputEl.value;
+        const searchTerm = cityEl.value;
         getWeather(searchTerm);
         searchHistory.push(searchTerm);
         localStorage.setItem("search", JSON.stringify(searchHistory));
@@ -132,4 +128,5 @@ function initPage() {
     }
 
 }
+
 initPage();

@@ -41,7 +41,6 @@ A simple web application that allows users to search for a city to get the curre
 ## Technologies Use
 <p><a href="https://openweathermap.org/">OpenWeather API</a></p>
 <p><a href="https://getbootstrap.com/">Bootstrap</a></p>
-<p><a href="https://momentjs.com/">Moment.js</a></p>
 
 
 ## Contributor:

@@ -44,7 +44,18 @@ function initPage() {
                 axios.get(UVQueryURL)
                     .then(function (response) {
                         let UVIndex = document.createElement("span");
-                        UVIndex.setAttribute("class", "badge badge-danger");
+                        
+                        // When UV Index is good, shows green, when ok shows yellow, when bad shows red
+                        if (response.data[0].value < 4 ) {
+                            UVIndex.setAttribute("class", "badge badge-success");
+                        }
+                        else if (response.data[0].value < 8) {
+                            UVIndex.setAttribute("class", "badge badge-warning");
+                        }
+                        else {
+                            UVIndex.setAttribute("class", "badge badge-danger");
+                        }
+                        console.log(response.data[0].value)
                         UVIndex.innerHTML = response.data[0].value;
                         currentUVEl.innerHTML = "UV Index: ";
                         currentUVEl.append(UVIndex);
@@ -126,7 +137,7 @@ function initPage() {
     if (searchHistory.length > 0) {
         getWeather(searchHistory[searchHistory.length - 1]);
     }
-
+    
 }
 
 initPage();
